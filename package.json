@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsx watch src/server.ts",
     "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
@@ -19,6 +18,13 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@types/dotenv": "^8.2.0",
+    "@types/pg": "^8.11.4",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "postgres": "^3.4.4",
+    "ts-postgres": "^2.0.1",
     "tsx": "^4.7.1"
   }
 }

@@ -1,8 +1,18 @@
-import { createServer } from "node:http";
+import Fastify from "fastify";
+import { Routes } from "./routes";
+import Cors from "@fastify/cors";
 
-const server = createServer((request, response) => {
-  response.write("hello word");
-  return response.end();
-});
+const server = Fastify({ logger: true });
 
-server.listen(3333);
+const Start = async () => {
+  await server.register(Cors);
+  await server.register(Routes);
+
+  try {
+    await server.listen({ port: 3333 });
+  } catch (err) {
+    process.exit(1);
+  }
+};
+
+Start();
