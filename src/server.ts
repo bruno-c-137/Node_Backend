@@ -9,7 +9,7 @@ const Start = async () => {
   await server.register(Routes);
   const port = process.env.PORT ? parseInt(process.env.PORT) : 3333;
   try {
-    await server.listen({ port: port });
+    await server.listen({ host: "0.0.0.0", port: port });
   } catch (err) {
     process.exit(1);
   }
